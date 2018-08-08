@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// se usa en el info-pagina.service.ts permite realizar peticiones get etc...
+import { HttpClientModule } from '@angular/common/http';
+
+
 // Rutas
 import { AppRoutingModule } from './app-routing.module';
 
@@ -24,7 +28,8 @@ import { ItemComponent } from './pages/item/item.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
