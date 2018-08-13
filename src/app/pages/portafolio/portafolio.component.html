@@ -33,8 +33,12 @@
 
   <div *ngIf="!productosService.cargando"
         class="animated fadeIn ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
+    <!-- El routerlink para cada que acceda a cada uno de los productos se puede poner 
+    como se ha puesto, entre corchetes y dentro un array con difernetes partes de la url o
+   se puede poner routerLink sin corchetes y una direccion como "/item{{producto.cod}}, la manera
+  habitual es como se ha puesto aquí -->
     <a *ngFor="let producto of productosService.productos" 
-        routerLink="/item" class="rk-item ae-masonry__item">
+        [routerLink]="['/item', producto.cod]" class="rk-item ae-masonry__item">
       <img src="assets/productos/{{ producto.url }}.jpg" alt="">
       <div class="item-meta">
         <h2>{{ producto.titulo }}</h2>
